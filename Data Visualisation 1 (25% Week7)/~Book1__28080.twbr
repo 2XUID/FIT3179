@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0805.0415                               -->
+<workbook original-version='18.1' source-build='2023.2.1 (20232.23.0805.0415)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='forbes_billionaires_2022.csv+ (Multiple Connections)' inline='true' name='federated.03903cc0pmu2ul13ttwps0l58wik' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='forbes_billionaires_2022' name='textscan.1igit411oxe5zg10hxncn12aq7w8'>
+            <connection class='textscan' directory='D:/Documents/Collection/3-SEM_2/FIT3179/Data Visualisation 1 (25% Week7)' filename='forbes_billionaires_2022.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='forbes_companies_2022' name='textscan.05hvhpu0tqbqnh1fnnmlb01r98q3'>
+            <connection class='textscan' directory='D:/Documents/Collection/3-SEM_2/FIT3179/Data Visualisation 1 (25% Week7)' filename='forbes_companies_2022.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation all='true' name='forbes_billionaires_2022.csv+' type='union'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='rank' />
+            <column datatype='string' name='personName' />
+            <column datatype='integer' name='age' />
+            <column datatype='integer' name='finalWorth' />
+            <column datatype='string' name='category' />
+            <column datatype='string' name='source' />
+            <column datatype='string' name='country' />
+            <column datatype='string' name='state' />
+            <column datatype='string' name='city' />
+            <column datatype='string' name='organization' />
+            <column datatype='boolean' name='selfMade' />
+            <column datatype='string' name='gender' />
+            <column datatype='date' name='birthDate' />
+            <column datatype='string' name='title' />
+            <column datatype='integer' name='philanthropyScore' />
+            <column datatype='string' name='Table Name' />
+          </columns>
+          <relation connection='textscan.1igit411oxe5zg10hxncn12aq7w8' name='forbes_billionaires_2022.csv' table='[forbes_billionaires_2022#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+              <column datatype='integer' name='rank' ordinal='0' />
+              <column datatype='string' name='personName' ordinal='1' />
+              <column datatype='integer' name='age' ordinal='2' />
+              <column datatype='integer' name='finalWorth' ordinal='3' />
+              <column datatype='string' name='category' ordinal='4' />
+              <column datatype='string' name='source' ordinal='5' />
+              <column datatype='string' name='country' ordinal='6' />
+              <column datatype='string' name='state' ordinal='7' />
+              <column datatype='string' name='city' ordinal='8' />
+              <column datatype='string' name='organization' ordinal='9' />
+              <column datatype='boolean' name='selfMade' ordinal='10' />
+              <column datatype='string' name='gender' ordinal='11' />
+              <column datatype='date' name='birthDate' ordinal='12' />
+              <column datatype='string' name='title' ordinal='13' />
+              <column datatype='integer' name='philanthropyScore' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1igit411oxe5zg10hxncn12aq7w8' name='forbes_billionaires_2022.csv1' table='[forbes_billionaires_2022#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+              <column datatype='integer' name='rank' ordinal='0' />
+              <column datatype='string' name='personName' ordinal='1' />
+              <column datatype='integer' name='age' ordinal='2' />
+              <column datatype='integer' name='finalWorth' ordinal='3' />
+              <column datatype='string' name='category' ordinal='4' />
+              <column datatype='string' name='source' ordinal='5' />
+              <column datatype='string' name='country' ordinal='6' />
+              <column datatype='string' name='state' ordinal='7' />
+              <column datatype='string' name='city' ordinal='8' />
+              <column datatype='string' name='organization' ordinal='9' />
+              <column datatype='boolean' name='selfMade' ordinal='10' />
+              <column datatype='string' name='gender' ordinal='11' />
+              <column datatype='date' name='birthDate' ordinal='12' />
+              <column datatype='string' name='title' ordinal='13' />
+              <column datatype='integer' name='philanthropyScore' ordinal='14' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation all='true' name='forbes_billionaires_2022.csv+' type='union'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='rank' />
+            <column datatype='string' name='personName' />
+            <column datatype='integer' name='age' />
+            <column datatype='integer' name='finalWorth' />
+            <column datatype='string' name='category' />
+            <column datatype='string' name='source' />
+            <column datatype='string' name='country' />
+            <column datatype='string' name='state' />
+            <column datatype='string' name='city' />
+            <column datatype='string' name='organization' />
+            <column datatype='boolean' name='selfMade' />
+            <column datatype='string' name='gender' />
+            <column datatype='date' name='birthDate' />
+            <column datatype='string' name='title' />
+            <column datatype='integer' name='philanthropyScore' />
+            <column datatype='string' name='Table Name' />
+          </columns>
+          <relation connection='textscan.1igit411oxe5zg10hxncn12aq7w8' name='forbes_billionaires_2022.csv' table='[forbes_billionaires_2022#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+              <column datatype='integer' name='rank' ordinal='0' />
+              <column datatype='string' name='personName' ordinal='1' />
+              <column datatype='integer' name='age' ordinal='2' />
+              <column datatype='integer' name='finalWorth' ordinal='3' />
+              <column datatype='string' name='category' ordinal='4' />
+              <column datatype='string' name='source' ordinal='5' />
+              <column datatype='string' name='country' ordinal='6' />
+              <column datatype='string' name='state' ordinal='7' />
+              <column datatype='string' name='city' ordinal='8' />
+              <column datatype='string' name='organization' ordinal='9' />
+              <column datatype='boolean' name='selfMade' ordinal='10' />
+              <column datatype='string' name='gender' ordinal='11' />
+              <column datatype='date' name='birthDate' ordinal='12' />
+              <column datatype='string' name='title' ordinal='13' />
+              <column datatype='integer' name='philanthropyScore' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1igit411oxe5zg10hxncn12aq7w8' name='forbes_billionaires_2022.csv1' table='[forbes_billionaires_2022#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+              <column datatype='integer' name='rank' ordinal='0' />
+              <column datatype='string' name='personName' ordinal='1' />
+              <column datatype='integer' name='age' ordinal='2' />
+              <column datatype='integer' name='finalWorth' ordinal='3' />
+              <column datatype='string' name='category' ordinal='4' />
+              <column datatype='string' name='source' ordinal='5' />
+              <column datatype='string' name='country' ordinal='6' />
+              <column datatype='string' name='state' ordinal='7' />
+              <column datatype='string' name='city' ordinal='8' />
+              <column datatype='string' name='organization' ordinal='9' />
+              <column datatype='boolean' name='selfMade' ordinal='10' />
+              <column datatype='string' name='gender' ordinal='11' />
+              <column datatype='date' name='birthDate' ordinal='12' />
+              <column datatype='string' name='title' ordinal='13' />
+              <column datatype='integer' name='philanthropyScore' ordinal='14' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rank]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>rank</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>personName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[personName]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>personName</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>finalWorth</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[finalWorth]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>finalWorth</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[source]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>source</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>city</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organization</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organization]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>organization</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>selfMade</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[selfMade]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>selfMade</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>birthDate</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[birthDate]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>birthDate</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[title]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>philanthropyScore</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[philanthropyScore]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>philanthropyScore</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Table Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Table Name]</local-name>
+            <parent-name>[forbes_billionaires_2022.csv+]</parent-name>
+            <remote-alias>Table Name</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' caption='To pad' datatype='integer' name='[Calculation_1975954398490738689]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='IF [Table Name] = &apos;forbes_billionaires_2022.csv&apos; THEN 1&#13;&#10;ElSE 49&#13;&#10;END' />
+      </column>
+      <column caption='T' datatype='real' name='[Calculation_1975954398491328514]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(INDEX()-25)/4'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Sigmoid' datatype='real' name='[Calculation_1975954398493376515]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1/(1+EXP(1)^-[Calculation_1975954398491328514])'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Company Total Value' datatype='real' name='[Calculation_1975954398501421061]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[assets - Split 1 - Split 1]+[sales  - Split 1 - Split 1]+[profit  - Split 1 - Split 1]+[market value - Split 1 - Split 1]' />
+      </column>
+      <column caption='Rank 1' datatype='real' name='[Calculation_1975954398503051270]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(SUM([Calculation_1975954398501421061]))/TOTAL(SUM([Calculation_1975954398501421061]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Curve' datatype='real' name='[Calculation_1975954398506192904]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_1975954398503051270] + (([Rank 1 (copy)_1975954398506110983]-[Calculation_1975954398503051270]*[Calculation_1975954398493376515]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Rank 2' datatype='real' name='[Rank 1 (copy)_1975954398506110983]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(SUM([Calculation_1975954398501421061]))/TOTAL(SUM([Calculation_1975954398501421061]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column aggregation='None' caption='Padding' datatype='integer' name='[To pad (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[Calculation_1975954398490738689]' peg='0' size='1' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='forbes_billionaires_2022.csv' datatype='table' name='[__tableau_internal_object_id__].[forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+      <column caption='Assets (Billions)' datatype='real' name='[assets - Split 1 - Split 1]' role='dimension' type='ordinal' user:SplitFieldIndex='11' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[assets - Split 1]'>
+        <calculation class='tableau' formula='FLOAT( SPLIT( [assets - Split 1], &quot;$&quot;, 2 ) )' />
+      </column>
+      <column caption='Assets - Split 1' datatype='string' hidden='true' name='[assets - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='9' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[assets]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [assets], &quot; &quot;, 1 ) )' />
+      </column>
+      <column caption='Birth Date' datatype='date' name='[birthDate]' role='dimension' type='ordinal' />
+      <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Final Worth' datatype='integer' name='[finalWorth]' role='measure' type='quantitative' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Market Value (Billions)' datatype='real' name='[market value - Split 1 - Split 1]' role='dimension' type='ordinal' user:SplitFieldIndex='13' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[market value - Split 1]'>
+        <calculation class='tableau' formula='FLOAT( SPLIT( [market value - Split 1], &quot;$&quot;, 2 ) )' />
+      </column>
+      <column caption='Market Value - Split 1' datatype='string' hidden='true' name='[market value - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='12' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[market value]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [market value], &quot; &quot;, 1 ) )' />
+      </column>
+      <column caption='Organization' datatype='string' name='[organization]' role='dimension' type='nominal' />
+      <column caption='Person Name' datatype='string' name='[personName]' role='dimension' type='nominal' />
+      <column caption='Philanthropy Score' datatype='integer' name='[philanthropyScore]' role='measure' type='quantitative' />
+      <column caption='Profit (Billions)' datatype='real' name='[profit  - Split 1 - Split 1]' role='dimension' type='ordinal' user:SplitFieldIndex='8' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[profit  - Split 1]'>
+        <calculation class='tableau' formula='FLOAT( SPLIT( [profit  - Split 1], &quot;$&quot;, 2 ) )' />
+      </column>
+      <column caption='Profit - Split 1' datatype='string' hidden='true' name='[profit  - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='6' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[profit ]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [profit ], &quot; &quot;, 1 ) )' />
+      </column>
+      <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
+      <column caption='Sales (Billions)' datatype='real' name='[sales  - Split 1 - Split 1]' role='dimension' type='ordinal' user:SplitFieldIndex='5' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[sales  - Split 1]'>
+        <calculation class='tableau' formula='FLOAT( SPLIT( [sales  - Split 1], &quot;$&quot;, 2 ) )' />
+      </column>
+      <column caption='Sales - Split 1' datatype='string' hidden='true' name='[sales  - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='3' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[sales ]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [sales ], &quot; &quot;, 1 ) )' />
+      </column>
+      <column caption='Self Made' datatype='boolean' name='[selfMade]' role='dimension' type='nominal' />
+      <column caption='Source - Split 1' datatype='string' name='[source - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[source]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [source], &quot;, &quot;, 1 ) )' />
+      </column>
+      <column caption='Source - Split 2' datatype='string' name='[source - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.03903cc0pmu2ul13ttwps0l58wik].[source]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [source], &quot; &quot;, 2 ) )' />
+      </column>
+      <column caption='Source' datatype='string' name='[source]' role='dimension' type='nominal' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+      <drill-paths>
+        <drill-path name='country, state, city' />
+      </drill-paths>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='forbes_billionaires_2022.csv' id='forbes_billionaires_2022.csv_0407549F48514B49A0C8A477A0058569'>
+            <properties context=''>
+              <relation all='true' name='forbes_billionaires_2022.csv+' type='union'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='rank' />
+                  <column datatype='string' name='personName' />
+                  <column datatype='integer' name='age' />
+                  <column datatype='integer' name='finalWorth' />
+                  <column datatype='string' name='category' />
+                  <column datatype='string' name='source' />
+                  <column datatype='string' name='country' />
+                  <column datatype='string' name='state' />
+                  <column datatype='string' name='city' />
+                  <column datatype='string' name='organization' />
+                  <column datatype='boolean' name='selfMade' />
+                  <column datatype='string' name='gender' />
+                  <column datatype='date' name='birthDate' />
+                  <column datatype='string' name='title' />
+                  <column datatype='integer' name='philanthropyScore' />
+                  <column datatype='string' name='Table Name' />
+                </columns>
+                <relation connection='textscan.1igit411oxe5zg10hxncn12aq7w8' name='forbes_billionaires_2022.csv' table='[forbes_billionaires_2022#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                    <column datatype='integer' name='rank' ordinal='0' />
+                    <column datatype='string' name='personName' ordinal='1' />
+                    <column datatype='integer' name='age' ordinal='2' />
+                    <column datatype='integer' name='finalWorth' ordinal='3' />
+                    <column datatype='string' name='category' ordinal='4' />
+                    <column datatype='string' name='source' ordinal='5' />
+                    <column datatype='string' name='country' ordinal='6' />
+                    <column datatype='string' name='state' ordinal='7' />
+                    <column datatype='string' name='city' ordinal='8' />
+                    <column datatype='string' name='organization' ordinal='9' />
+                    <column datatype='boolean' name='selfMade' ordinal='10' />
+                    <column datatype='string' name='gender' ordinal='11' />
+                    <column datatype='date' name='birthDate' ordinal='12' />
+                    <column datatype='string' name='title' ordinal='13' />
+                    <column datatype='integer' name='philanthropyScore' ordinal='14' />
+                  </columns>
+                </relation>
+                <relation connection='textscan.1igit411oxe5zg10hxncn12aq7w8' name='forbes_billionaires_2022.csv1' table='[forbes_billionaires_2022#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                    <column datatype='integer' name='rank' ordinal='0' />
+                    <column datatype='string' name='personName' ordinal='1' />
+                    <column datatype='integer' name='age' ordinal='2' />
+                    <column datatype='integer' name='finalWorth' ordinal='3' />
+                    <column datatype='string' name='category' ordinal='4' />
+                    <column datatype='string' name='source' ordinal='5' />
+                    <column datatype='string' name='country' ordinal='6' />
+                    <column datatype='string' name='state' ordinal='7' />
+                    <column datatype='string' name='city' ordinal='8' />
+                    <column datatype='string' name='organization' ordinal='9' />
+                    <column datatype='boolean' name='selfMade' ordinal='10' />
+                    <column datatype='string' name='gender' ordinal='11' />
+                    <column datatype='date' name='birthDate' ordinal='12' />
+                    <column datatype='string' name='title' ordinal='13' />
+                    <column datatype='integer' name='philanthropyScore' ordinal='14' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <show-full-range>
+          <column>[federated.03903cc0pmu2ul13ttwps0l58wik].[To pad (bin) 2]</column>
+          <column>[federated.03903cc0pmu2ul13ttwps0l58wik].[To pad (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{75055157-DD3E-4E9F-8F0A-50ED5204B1F6}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D07198AA-ED79-4FF1-89DB-7C1D497FDD61}' />
+    </window>
+  </windows>
+</workbook>

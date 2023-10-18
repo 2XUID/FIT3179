@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>RuiQin30874157 Visualization 2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <script src="https://unpkg.com/@turf@6/turf.min.js"></script>
+  <script src="points_map.vg.json"></script>
+  <script>
+    var bbox = turf.bbox(features);
+  </script>
+  <script>
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
+  </script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/headers.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header" id="top">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+        onclick="scrollToSection('top')">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" /></svg>
+        <span class="fs-4">RuiQin 30874157</span>
+      </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Map</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </header>
+  </div>
+  <div class="title-container">
+    <div class="title">
+      <br><br>
+      <h1>Celestial Visitors:</h1>
+      <h1>A Visual Exploration of UFO Sightings</h1>
+      <--img src="background.png" style="width: 100%;">
+        <p style="text-align: justify;color: #000;text-transform: none;">
+          In the realm of the unexplained and mysterious, few phenomena captivate the human imagination quite like UFO
+          sightings. These encounters with unidentified flying objects have been reported worldwide, prompting both awe
+          and speculation. This data visualization story embarks on a journey to unravel the patterns, trends, and
+          intriguing details surrounding these celestial visits.
+        </p>
+        <p style="text-align: justify;color: #000;text-transform: none;">
+          This exploration will take us through a comprehensive dataset cataloging these encounters, providing a rich
+          tapestry of information. Our journey is structured to shed light on various dimensions of these sightings,
+          from
+          the peculiar shapes of the UFOs to the duration of the encounters. We'll also delve into the temporal aspect,
+          unraveling how sightings have evolved over time, and whether any seasonal patterns emerge.
+        </p>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-2-3" style="border: 2px solid #000">
+        <section id="Rankings" style="border: 2px solid  #000">
+          <div class="content" style="width: 100%; height: 1000px;">
+            <br>
+            <h2>Rankings: Rank fluctuation of Top 20 University in 2023 (2013-2023)</h2>
+            <div id="symbol_map"></div>
+            <script type="text/javascript">
+              var spec2 = "js/points_map.vg.json";
+              vegaEmbed('#symbol_map', spec2, {
+                "actions": false
+              }).then(function (result) {}).catch(console.error);
+            </script>
+            <p>
+              The above chart visualises the fluctuation in rankings of the top 20 universities in 2023
+              over the years.
+              These rankings are determined by many different factors that this visualisation will
+              continue to explore.
+              <br>
+              It can be obbserved that most of the universities holding a high ranking has been holding on
+              to a similarly
+              high ranking over the years. However, some exceptions such as TsingHua University and
+              National University of Singapore
+              climbed the ranks over the years and successfully placed in the top 20 in 2023.
+              <br>
+              <br>
+              Tooltips are enabled for the visualisation above. By hovering over the points, further
+              details can be shown.
+              <br>
+              To view the rank fluctuation of a specific university, click on the line for that specific
+              university.
+            </p>
+          </div>
+        </section>
+</body>
+
+</html>

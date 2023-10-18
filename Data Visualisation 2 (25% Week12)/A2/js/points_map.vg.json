@@ -1,0 +1,413 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 400,
+  "transform": [{
+    "filter": "year(datum.datetime) > 0"
+  }],
+  "data": {
+    "name": "dataset",
+    "url": "https://raw.githubusercontent.com/2XUID/A2/master/data/complete_clean.csv"
+  },
+  "params": [{
+    "name": "year_selection",
+    "value": 0,
+    "bind": {
+      "input": "range",
+      "min": 2010,
+      "max": 2020,
+      "step": 1,
+      "name": "Year:  "
+    }
+  }],
+  "vconcat": [{
+      "selection": {
+        "shape_selection": {
+          "type": "multi",
+          "fields": ["shape"],
+          "bind": "legend",
+          "toggle": true
+        }
+      },
+      "vconcat": [{
+          "params": [{
+            "name": "ufo_selection",
+            "select": {
+              "type": "point",
+              "fields": ["shape"]
+            },
+            "bind": {
+              "legend": "shape"
+            }
+          }],
+          "height": 100,
+          "width": 800,
+          "mark": {
+            "type": "bar",
+            "cursor": "pointer"
+          },
+          "transform": [{
+              "filter": "datum.country !== 'US'"
+            },
+            {
+              "filter": {
+                "selection": "shape_selection"
+              }
+            },
+            {
+              "filter": "datum.shape !== null && datum.state !== null"
+            }
+          ],
+          "selection": {
+            "global_selection": {
+              "type": "multi",
+              "fields": ["state"],
+              "on": "click",
+              "toggle": "event.shiftKey"
+            },
+            "shape_selection": {
+              "type": "multi",
+              "fields": ["shape"],
+              "bind": "legend",
+              "toggle": true
+            }
+          },
+          "encoding": {
+            "x": {
+              "axis": {
+                "title": "Number of sightings",
+                "titleFontSize": 10
+              },
+              "aggregate": "count",
+              "field": "shape",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "state",
+              "title": "Other",
+              "axis": {
+                "titleFontSize": 18
+              },
+              "sort": {
+                "op": "count",
+                "field": "shape",
+                "order": "descending"
+              }
+            },
+            "color": {
+              "condition": {
+                "selection": "global_selection",
+                "field": "shape",
+                "type": "nominal",
+                "scale": {
+                  "domain": [
+                    "changing",
+                    "chevron",
+                    "cigar",
+                    "circle",
+                    "cone",
+                    "cross",
+                    "cylinder",
+                    "delta",
+                    "diamond",
+                    "disk",
+                    "dome",
+                    "egg",
+                    "fireball",
+                    "flash",
+                    "formation",
+                    "light",
+                    "other",
+                    "oval",
+                    "rectangle",
+                    "sphere",
+                    "teardrop",
+                    "triangle",
+                    "unknown"
+                  ]
+                },
+                "legend": {
+                  "title": "UFO Shape",
+                  "type": "symbol",
+                  "orient": "right",
+                  "titleFontSize": 15,
+                  "symbolSize": 150
+                }
+              },
+              "value": "lightgray"
+            },
+            "opacity": {
+              "condition": [{
+                  "selection": "shape_selection",
+                  "value": 1
+                },
+                {
+                  "selection": "global_selection",
+                  "value": 1
+                }
+              ],
+              "value": 0.001
+            },
+            "tooltip": [{
+                "title": "Number of sightings",
+                "aggregate": "count",
+                "field": "shape",
+                "type": "quantitative"
+              },
+              {
+                "title": "UFO Shape",
+                "field": "shape",
+                "type": "nominal"
+              }
+            ]
+          }
+        },
+        {
+          "height": 100,
+          "width": 800,
+          "mark": {
+            "type": "bar",
+            "cursor": "pointer",
+            "on": [{
+              "trigger": "click",
+              "modify": "bar_selection",
+              "values": "datum.state"
+            }]
+          },
+          "transform": [{
+              "filter": "datum.country == 'US'"
+            },
+            {
+              "filter": {
+                "selection": "shape_selection"
+              }
+            },
+            {
+              "filter": "datum.shape !== null && datum.us_region !== null"
+            }
+          ],
+          "selection": {
+            "us_selection": {
+              "type": "multi",
+              "fields": ["us_region"],
+              "on": "click",
+              "toggle": "event.shiftKey"
+            },
+            "shape_selection": {
+              "type": "multi",
+              "fields": ["shape"],
+              "bind": "legend",
+              "toggle": true
+            }
+          },
+          "encoding": {
+            "x": {
+              "axis": {
+                "title": "Number of sightings",
+                "titleFontSize": 10
+              },
+              "aggregate": "count",
+              "field": "shape",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "us_region",
+              "type": "nominal",
+              "axis": {
+                "title": "United States",
+                "titleFontSize": 18
+              },
+              "sort": {
+                "op": "count",
+                "field": "shape",
+                "order": "descending"
+              }
+            },
+            "color": {
+              "condition": {
+                "selection": "us_selection",
+                "field": "shape",
+                "type": "nominal",
+                "scale": {
+                  "domain": [
+                    "changing",
+                    "chevron",
+                    "cigar",
+                    "circle",
+                    "cone",
+                    "cross",
+                    "cylinder",
+                    "delta",
+                    "diamond",
+                    "disk",
+                    "dome",
+                    "egg",
+                    "fireball",
+                    "flash",
+                    "formation",
+                    "light",
+                    "other",
+                    "oval",
+                    "rectangle",
+                    "sphere",
+                    "teardrop",
+                    "triangle",
+                    "unknown"
+                  ]
+                }
+              },
+              "value": "lightgray"
+            },
+            "opacity": {
+              "condition": [{
+                  "selection": "shape_selection",
+                  "value": 1
+                },
+                {
+                  "selection": "us_selection",
+                  "value": 1
+                }
+              ],
+              "value": 0.001
+            },
+            "tooltip": [{
+                "title": "Number of sightings",
+                "aggregate": "count",
+                "field": "shape",
+                "type": "quantitative"
+              },
+              {
+                "title": "UFO Shape",
+                "field": "shape",
+                "type": "nominal"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "layer": [{
+          "data": {
+            "url": "https://raw.githubusercontent.com/2XUID/A2/master/js/ne_110m_admin_0_countries.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "ne_110m_admin_0_countries"
+            }
+          },
+          "width": 650,
+          "height": 400,
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e6dec0",
+            "stroke": "gray"
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/2XUID/A2/master/js/ne_110m_ocean.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "oceans"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#cee5fc"
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/2XUID/A2/master/js/ne_110m_graticules_30.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "ne_110m_graticules_30"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "stroke": "#a7b1bc"
+          }
+        },
+        {
+          "transform": [{
+              "filter": {
+                "selection": "global_selection"
+              }
+            },
+            {
+              "filter": {
+                "selection": "us_selection"
+              }
+            }
+          ],
+          "data": {
+            "name": "dataset"
+          },
+          "width": 650,
+          "height": 650,
+          "mark": {
+            "type": "circle",
+            "cursor": "pointer"
+          },
+          "encoding": {
+            "size": {
+              "field": "duration",
+              "type": "quantitative",
+              "scale": {
+                "type": "threshold",
+                "domain": [60, 1800, 3600],
+                "range": [25, 50, 75, 100]
+              }
+            },
+            "longitude": {
+              "field": "longitude",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "latitude",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "shape",
+              "type": "nominal",
+              "scale": {
+                "scheme": "category20"
+              }
+            },
+            "opacity": {
+              "condition": {
+                "selection": "shape_selection",
+                "value": 0.75
+              },
+              "value": 0.001
+            },
+            "tooltip": [{
+                "field": "country",
+                "type": "nominal",
+                "title": "Country"
+              },
+              {
+                "field": "state",
+                "type": "nominal",
+                "title": "State"
+              },
+              {
+                "field": "duration",
+                "type": "quantitative",
+                "title": "Dura tion"
+              },
+              {
+                "field": "comments",
+                "type": "nominal",
+                "title": "Comments"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {}
+}

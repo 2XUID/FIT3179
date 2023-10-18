@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart that sorts the y-values by the x-values.",
+    "width": 1000,
+    "height": 250,
+    "data": {
+        "url": "https://raw.githubusercontent.com/2XUID/A2/master/data/sorted_ufo_shapes.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "category",
+            "type": "ordinal",
+            "sort": "-x",
+            "title": "Category"
+        },
+        "x": {
+            "aggregate": "sum",
+            "field": "amount",
+            "title": "Amount"
+        }
+    }
+}

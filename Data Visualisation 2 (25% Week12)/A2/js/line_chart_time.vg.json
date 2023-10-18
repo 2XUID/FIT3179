@@ -1,0 +1,68 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 900,
+    "height": 200,
+    "data": {
+        "url": "https://raw.githubusercontent.com/2XUID/A2/master/data/complete_clean.csv"
+    },
+    "encoding": {
+        "x": {
+            "timeUnit": "utchours",
+            "field": "datetime",
+            "type": "temporal",
+            "title": "Time"
+        },
+        "tooltip": [{
+                "timeUnit": "utchours",
+                "field": "datetime",
+                "type": "temporal",
+                "title": "Time"
+            },
+            {
+                "field": "record",
+                "type": "quantitative",
+                "aggregate": "count"
+            }
+        ]
+    },
+    "layer": [{
+        "mark": {
+            "type": "line",
+            "color": "blue"
+        },
+        "encoding": {
+            "y": {
+                "field": "record",
+                "type": "quantitative",
+                "aggregate": "count",
+                "scale": {
+                    "domain": [0, 1100]
+                }
+            }
+        }
+    }, {
+        "mark": "rule",
+        "params": [{
+            "name": "hover",
+            "select": {
+                "type": "point",
+                "on": "mouseover"
+            }
+        }],
+        "encoding": {
+            "color": {
+                "condition": {
+                    "param": "hover",
+                    "empty": false,
+                    "value": "black"
+                },
+                "value": "transparent"
+            }
+        }
+    }],
+    "config": {
+        "axisY": {
+            "minExtent": 30
+        }
+    }
+}
